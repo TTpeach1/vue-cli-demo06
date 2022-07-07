@@ -11,7 +11,9 @@
         <input type="text" v-model="scope.row.age">
       </template>
       <template v-slot:headImgUrl='scope'>
-        <img :src="scope.row.headImgUrl" alt="" >
+        <a v-if='scope.row.type==0' :href="scope.row.headImgUrl">{{scope.row.headImgUrl}}</a>
+        <img v-else-if='scope.row.type==1' :src="scope.row.headImgUrl" alt="" >
+        <div v-else>{{scope.row.headImgUrl}}</div>
       </template>
     </MS>
   </div>
